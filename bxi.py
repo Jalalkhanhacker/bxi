@@ -7,7 +7,7 @@ except ImportError:
     os.system("pip install requests")
 import requests
 
-v="3.2"
+v="3.3"
 arch=subprocess.check_output("uname -om", shell=True).decode()
 os.system("clear")
 print(" Checking Update . . .")
