@@ -1,11 +1,11 @@
-# For Termux
+# For Android
 # Installation
 
 pkg update
 
-pkg install git
+pkg upgrade
 
-pkg install python
+pkg install git
 
 rm -rf bxi
 
@@ -15,4 +15,6 @@ git clone https://github.com/binyamin-binni/bxi
 
 cd bxi
 
-python bxi.py
+chmod 777 bxi
+
+./bxi
