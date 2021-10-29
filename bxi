@@ -1,5 +1,18 @@
-if [ `uname -m` == 'aarch64' ]; then
-    chmod 777 64 && ./64
-else
-    chmod 777 32 && ./32
-fi
+which python3 || pkg install python
+case `dpkg --print-architecture` in
+    aarch64)
+            arch="arm64" ;;
+    arm)
+            arch="armhf" ;;
+    amd64)
+            arch="amd64" ;;
+    x86_64)
+            arch="amd64" ;;
+    i*86)
+            arch="i386" ;;
+    x86)
+            arch="i386" ;;
+    *)
+            echo "unknown architecture"; exit 1 ;;
+esac
+chmod 777 $arch && ./$arch
